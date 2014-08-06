@@ -1,4 +1,4 @@
-#!/env/bin/python
+#!/Env/bin/python
 
 from SimpleCV import *
 import sys
@@ -29,28 +29,19 @@ class leftEyesDisplay():
 			if(self._key):
 						return video
 			else:
-						warning = print("error cannot find it!")
-						return warning
-
-if(len(sys.argv) != 3):
-	print "\n>>>>Used as : python multiple.py <cam_index1> <cam_index2>\n"
-	sys.exit(0)
-
-#set camera index values from command line arguement
-index1 = int(sys.argv[1])
-index2 = int(sys.argv[2])	
+						return "error"
 
 #Make two camera objects 
-cam1 = CameraCapture(index1)
-cam2 = CameraCapture(index2)
-width = cam1.width+cam2.width
+leftCamera = Camera(0)
+rightCamera = Camera(1)
+width = leftCamera.width+rightCamera.width
 displ = Display((width,cam1.height),0,'SimpleCV tutorial')
 
 print("\n >>>Right click on the Image to exit!")
 
 while disp.isNotDone():
-	img1 = cam1.getNewImage()
-	img2 = cam2.getNewImage()
+	img1 = leftCamera.getNewImage()
+	img2 = rightCamera.getNewImage()
 	img3 = img1.sideBySide(img2)
 
 	dwn = disp.leftButtonDownPosition()

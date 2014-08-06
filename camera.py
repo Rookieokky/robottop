@@ -10,3 +10,4 @@ rightcamera = Camera(1, {"width": 1280, "height": 960})
 
 leftcamera.getImage().save("left.jpg")
 rightcamera.getImage().save("right.jpg")
+
