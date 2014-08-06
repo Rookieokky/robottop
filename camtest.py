@@ -3,30 +3,23 @@
 from SimpleCV.base import *
 import sys
 import argparse
-import webbrowser
-import cv2
-from SimpleCV import Shell
-import sys
 
-if len(sys.argv) > 1:
-		Shell.main(sys.argv)
-else: 
-		Shell.main()
 
-# initialize left camera
+# initialize left camera class
 class LeftEyedisplay():
 
-	leftcamera = Camera(0,{"width": 1280, "height": 960})	
-	vs = VideoStream(leftcamera, 25, true)
-	display = Display()
-	leftcamera.getImage().save(vs)
 
-# initialize right camera 
+	# this function defines the left camera specs
+	def leftcamera(self):
+			lefteye = Camera(0, {"width": 1280, "height": 960})
+			lefteye.live()
+
+
+# initialize right camera class
 class RightEyedisplay():
 	
-	rightcamera = Camera(1,{"width": 1280, "height": 960})
-	vs = VideoStream(rightcamera, 25, true)
-	display = Display()
-	rightcamera.getImage().save(vs)
+	def rightcamera(self):
+			righteye = Camera(1, {"width": 1280, "height":960})
+			righteye.live()
 
 
