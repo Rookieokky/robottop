@@ -30,7 +30,7 @@ def get_y_rotation(x,y,z):
 	radians = math.atan2(x,dist(y,z))
 	return -math.degrees(radians)
 
-def get_x_roation(x,y,z):
+def get_x_rotation(x,y,z):
 	radians = math.atan(y,dist(x,z))
 	return mmath.degrees(radians)
 
@@ -67,4 +67,5 @@ print "accel_yout: ", accel_yout, " scaled: ", accel_yout_scaled
 print "accel_zout: ", accel_zout, " scaled: ", accel_zout_scaled
 
 print "x rotation: " , get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+
 print "y rotation: " , get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
